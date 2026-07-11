@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>语文主观题 Skill 训练 · 思维导图</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#1a1d24; --ink:#e8eaed; --sub:#9aa0aa;
+    --root:#7c5cff; --m1:#4aa3ff; --m2:#2dd4a7; --m3:#ffb454; --m4:#ff6b8a; --m5:#c084fc;
+    --line:#3a3f4b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
+    padding:36px 28px 60px}
+  h1{font-size:20px;font-weight:650;margin:0 0 4px;letter-spacing:.5px}
+  .sub{color:var(--sub);font-size:13px;margin-bottom:28px}
+  .map{display:flex;gap:0;align-items:stretch}
+  .root{display:flex;align-items:center}
+  .rootnode{background:linear-gradient(135deg,var(--root),#9d7bff);color:#fff;
+    padding:18px 20px;border-radius:16px;font-size:16px;font-weight:650;
+    max-width:190px;box-shadow:0 8px 28px rgba(124,92,255,.35);line-height:1.4}
+  .rootnode small{display:block;font-weight:400;font-size:12px;opacity:.85;margin-top:6px}
+  .branches{display:flex;flex-direction:column;gap:14px;padding-left:34px;position:relative}
+  .branch{background:var(--card);border-radius:14px;padding:14px 16px 14px 18px;
+    border-left:4px solid var(--c);position:relative;min-width:520px}
+  .btitle{font-size:14.5px;font-weight:640;color:var(--c);margin-bottom:2px}
+  .bnote{font-size:12px;color:var(--sub);margin-bottom:9px}
+  .leaves{display:flex;flex-wrap:wrap;gap:7px}
+  .leaf{background:#242832;border:1px solid var(--line);border-radius:9px;
+    padding:6px 10px;font-size:12.3px;line-height:1.45;color:var(--ink);max-width:100%}
+  .leaf b{color:var(--c)}
+  .tag{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:20px;
+    background:var(--c);color:#0f1115;font-weight:650;margin-right:5px;vertical-align:middle}
+  .win{border-color:var(--m2)!important}
+  .win b{color:var(--m2)}
+  .foot{margin-top:26px;color:var(--sub);font-size:12px;line-height:1.7;
+    border-top:1px solid var(--line);padding-top:16px;max-width:900px}
+  .kpi{display:inline-block;background:#242832;border:1px solid var(--line);
+    border-radius:8px;padding:3px 10px;margin:3px 6px 3px 0;font-size:12px}
+  .kpi b{color:var(--m2)}
+</style>
+</head>
+<body>
+  <h1>把 Skill 当"模型"来训练 · 高层思维导图</h1>
+  <div class="sub">chinese-subjective-coach · 上海高考语文阅读主观题 · 数据驱动完善 skill</div>
+
+  <div class="map">
+    <div class="root"><div class="rootnode">目标：把基座里<u>隐性</u>的答题规律，抽成<u>显性、可教</u>的 Skill<small>并验证知识正确</small></div></div>
+
+    <div class="branches">
+      <!-- B1 -->
+      <div class="branch" style="--c:var(--m1)">
+        <div class="btitle">① 起点 · 一道题的失败</div>
+        <div class="bnote">《壶友》探究题：初答方向对但套错模板 → 暴露 skill 盲点</div>
+        <div class="leaves">
+          <span class="leaf">评价"讲道理<b>方式</b>"跑成了内容主题解读</span>
+          <span class="leaf">补进 文学类.md 第七节 + 自包含范例卡</span>
+        </div>
+      </div>
+
+      <!-- B2 -->
+      <div class="branch" style="--c:var(--m2)">
+        <div class="btitle">② 方法 · 双盲 + 防泄漏</div>
+        <div class="bnote">考生/阅卷 agent 物理隔离；子 agent 省 context</div>
+        <div class="leaves">
+          <span class="leaf"><b>make-blind</b> 剥答案 + <b>check-leak</b> 机器门禁</span>
+          <span class="leaf">污染题(skill已内嵌答案)全程排除</span>
+          <span class="leaf">泄露审计5向量：<b>0 泄露</b>(考生0次读答案)</span>
+        </div>
+      </div>
+
+      <!-- B3 -->
+      <div class="branch" style="--c:var(--m3)">
+        <div class="btitle">③ 关键发现 · 基座已很强</div>
+        <div class="bnote">ablation：用不用 skill 同分 → "得分"测不出价值</div>
+        <div class="leaves">
+          <span class="leaf">Opus 裸考 = Opus+skill = <b>95.8%</b></span>
+          <span class="leaf">Haiku 裸考 = Haiku+skill = <b>95.8%</b></span>
+          <span class="leaf"><b>信号只在"基座会跑偏"的题上</b>(壶友 3/5→5/5)</span>
+        </div>
+      </div>
+
+      <!-- B4 -->
+      <div class="branch" style="--c:var(--m5)">
+        <div class="btitle">④ 全量扫描 · 找失败地图</div>
+        <div class="bnote">18份卷×5板块=90篇文章 · 188题 · 全部裸考+官方评分</div>
+        <div class="leaves">
+          <span class="leaf">裸考基线 <b>95.2%</b>(166/187满分)</span>
+          <span class="leaf"><b>18 道真信号失分</b>(剔3道盲卷缺陷)</span>
+          <span class="leaf">analyst 聚类 → 4 类系统盲点</span>
+        </div>
+      </div>
+
+      <!-- B5 -->
+      <div class="branch win" style="--c:var(--m2)">
+        <div class="btitle">⑤ 反向传播 · 四条补丁写进 Skill</div>
+        <div class="bnote">通用采分规律.md · 每条带真题出处</div>
+        <div class="leaves">
+          <span class="leaf"><span class="tag">一</span>穷尽两面(正反面各设采分点)</span>
+          <span class="leaf"><span class="tag">二</span>锁定题型专属采分轨(别退通用套路)</span>
+          <span class="leaf"><span class="tag">三</span>补效果/趣味/读者作用层</span>
+          <span class="leaf"><span class="tag">四</span>立场/排序先校硬约束</span>
+        </div>
+      </div>
+
+      <!-- B6 -->
+      <div class="branch win" style="--c:var(--m2)">
+        <div class="btitle">⑥ 验证 · 提分是真的</div>
+        <div class="bnote">11道原失分题用更新skill重做，同题同评分</div>
+        <div class="leaves">
+          <span class="leaf"><b>67.5% → 90%</b></span>
+          <span class="leaf">7 题提分 / 4 平 / <b>0 回退</b></span>
+          <span class="leaf">知识正确性双向成立(失分反推+提分验证)</span>
+        </div>
+      </div>
+
+      <!-- B7 -->
+      <div class="branch" style="--c:var(--m4)">
+        <div class="btitle">⑦ 交付 · 双仓库备份</div>
+        <div class="bnote">内容一致，已上线</div>
+        <div class="leaves">
+          <span class="leaf">CodeCommit <b>claude-code-skills</b> 943367b</span>
+          <span class="leaf">GitHub <b>dashjim/dashjim-skills</b> f65c173</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div style="margin-bottom:10px">
+      <span class="kpi">文章 <b>90</b> 篇</span>
+      <span class="kpi">主观题 <b>188</b> 道</span>
+      <span class="kpi">裸考基线 <b>95.2%</b></span>
+      <span class="kpi">真信号失分 <b>18</b></span>
+      <span class="kpi">验证批 <b>67.5%→90%</b></span>
+      <span class="kpi">agent 调用 <b>~400</b></span>
+    </div>
+    <b style="color:var(--ink)">一句话主线：</b>基座模型语文已很强(95%)，skill 的价值不在"每题加分"，而在<b style="color:var(--m2)">堵住少数系统性盲点</b>——
+    这些盲点靠"全量扫描找失分 → 归纳规律 → 写进 skill → 验证提分"的闭环被找到、修复、并证明有效。
+    <br><span style="color:var(--sub)">残差(诚实标注)：4 道持平中 2 道规律方向对但采分点措辞未完全对上、1 道应试立场取舍、1 道盲卷数据问题。</span>
+  </div>
+</body>
+</html>
